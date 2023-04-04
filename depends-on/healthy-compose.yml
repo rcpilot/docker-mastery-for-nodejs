@@ -11,6 +11,7 @@ services:
         
   api:
     image: node:alpine
+    command: node .
     healthcheck:
       test: curl -f http://127.0.0.1
     depends_on:
@@ -31,7 +32,7 @@ services:
   mongo:
     image: mongo
     healthcheck:
-      test: echo 'db.runCommand("ping").ok' | mongo localhost:27017/test --quiet
+      test: echo 'db.runCommand("ping").ok' | mongosh localhost:27017/test --quiet
 
   mysql:
     image: mysql
