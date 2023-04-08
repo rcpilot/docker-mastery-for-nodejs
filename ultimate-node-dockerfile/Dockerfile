@@ -6,7 +6,7 @@ LABEL org.opencontainers.image.title="Ultimate Dockerfile"
 LABEL org.opencontainers.image.url=https://hub.docker.com/r/coretag/ultimate-dockerfile
 LABEL org.opencontainers.image.source=https://github.com/rcpilot/udemy-docker-mastery-for-nodejs
 LABEL org.opencontainers.image.licenses=MIT
-LABEL com.bretfisher.nodeversion=$NODE_VERSION
+LABEL com.coretag.nodeversion=$NODE_VERSION
 
 ENV NODE_ENV=production
 
