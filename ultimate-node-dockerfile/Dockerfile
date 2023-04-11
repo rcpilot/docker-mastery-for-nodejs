@@ -65,6 +65,9 @@ COPY . .
 
 RUN npm audit
 
+COPY --from=aquasec/trivy:latest /usr/local/bin/trivy /usr/local/bin/trivy
+RUN trivy fs --severity "HIGH,CRITICAL" --no-progress --security-checks vuln .
+
 ## Stage 4 (prune test files for production)
 FROM test as clean
 RUN rm -rf ./tests && rm -rf ./node_modules
